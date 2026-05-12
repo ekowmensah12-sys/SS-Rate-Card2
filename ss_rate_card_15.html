@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secret Sales — UK Marketing & Advertising Products 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f7f8fa;color:#1a1a1a;display:grid;grid-template-columns:1fr 300px;grid-template-rows:auto 1fr;min-height:100vh}
+
+/* HEADER spans both columns */
+#site-header{grid-column:1/3;grid-row:1;background:#0d1b2a;border-bottom:3px solid #1d9e75;padding:22px 300px 18px 0;text-align:center}
+#site-header .logo{display:block;color:#fff;font-size:11px;font-weight:800;letter-spacing:6px;margin-bottom:7px}
+#site-header h1{display:block;color:#fff;font-size:17px;font-weight:600;margin-bottom:9px}
+#site-header .badge{display:inline-block;background:#1d9e75;color:#fff;font-size:11px;font-weight:600;padding:3px 14px;border-radius:20px}
+
+/* PAGE BODY — takes remaining grid space */
+#page-body{grid-column:1/3;grid-row:2;display:grid;grid-template-columns:1fr 300px}
+
+/* CENTRE COLUMN */
+#centre{padding:28px 20px 80px}
+#centre-inner{max-width:600px;margin:0 auto}
+
+/* RIGHT PANEL */
+#panel{background:#fff;border-left:1px solid #e5e9ef;padding:20px;position:sticky;top:0;height:100vh;overflow-y:auto;display:flex;flex-direction:column}
+
+/* FORM ELEMENTS */
+.block{background:#fff;border:1px solid #e5e9ef;border-radius:10px;padding:18px 20px;margin-bottom:16px}
+.block-title{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.fg label{display:block;font-size:12px;font-weight:500;color:#555;margin-bottom:3px}
+.fg input,.fg select{width:100%;padding:8px 10px;border:1px solid #dde1e8;border-radius:6px;font-size:13px;color:#1a1a1a;background:#fff;outline:none}
+.fg input:focus,.fg select:focus{border-color:#1d9e75}
+.budget-block{background:#0d1b2a;border-radius:10px;padding:20px 24px;margin-bottom:16px;text-align:center}
+.budget-block label{display:block;font-size:12px;color:#9db3c8;margin-bottom:8px}
+.bnum{font-size:36px;font-weight:700;color:#fff}
+.bnum sup{font-size:18px;vertical-align:top;margin-top:5px;display:inline-block}
+.budget-block input[type=range]{width:100%;accent-color:#1d9e75;margin-top:10px}
+.blimits{display:flex;justify-content:space-between;font-size:11px;color:#6b8ca8;margin-top:3px}
+.fxnote{font-size:11px;color:#6b8ca8;margin-top:6px;display:none}
+.roas-block{background:#fff;border:1px solid #e5e9ef;border-radius:8px;padding:13px 15px;margin-bottom:20px}
+.roas-block label{font-size:12px;font-weight:500;color:#555;display:block;margin-bottom:3px}
+.roas-note{font-size:11px;color:#999;font-style:italic;margin-bottom:7px}
+.roas-block select{width:100%;padding:8px 10px;border:1px solid #dde1e8;border-radius:6px;font-size:13px;color:#1a1a1a;background:#fff;outline:none}
+.sec-title{font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:3px}
+.sec-desc{font-size:12px;color:#999;margin-bottom:12px}
+.pcard{background:#fff;border:1px solid #e5e9ef;border-radius:10px;margin-bottom:8px;overflow:hidden;transition:border-color .15s}
+.pcard:hover{border-color:#1d9e75}
+.pcard.sel{border-color:#1d9e75;background:#f0fdf8}
+.ptop{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;cursor:pointer}
+.pcheck{width:20px;height:20px;border-radius:50%;border:2px solid #dde1e8;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.pcard.sel .pcheck{background:#1d9e75;border-color:#1d9e75}
+.pcheck svg{display:none}
+.pcard.sel .pcheck svg{display:block}
+.pbody{flex:1}
+.ptitle{font-size:13px;font-weight:600;color:#1a1a1a}
+.pdesc{font-size:12px;color:#777;margin-top:3px;line-height:1.45}
+.pmeta{display:flex;align-items:center;gap:8px;margin-top:7px;flex-wrap:wrap}
+.pprice{font-size:15px;font-weight:700;color:#0d1b2a}
+.pimps{font-size:11px;color:#888;background:#f3f4f6;padding:2px 7px;border-radius:10px}
+.pthumb{width:80px;height:52px;border-radius:5px;border:1px solid #eaecf0;flex-shrink:0}
+.pdates{padding:0 16px 14px;border-top:1px solid #f0f4f8;padding-top:12px;display:none}
+.pcard.sel .pdates{display:block}
+.drow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.dg label{font-size:11px;font-weight:500;color:#666;display:block;margin-bottom:3px}
+.dg select,.dg input{width:100%;padding:7px 9px;border:1px solid #dde1e8;border-radius:6px;font-size:12px;color:#1a1a1a;background:#fff;outline:none}
+.dhint{font-size:11px;color:#1d9e75;font-style:italic;margin-top:4px}
+.dwarn{font-size:11px;color:#e24b4a;margin-top:4px;display:none}
+.psec{margin-bottom:24px}
+
+/* RIGHT PANEL */
+.panel-title{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #eaecf0;display:flex;align-items:center;justify-content:space-between}
+.cbadge{background:#f3f4f6;border:1px solid #e5e9ef;border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;color:#555}
+.pempty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#bbb;font-size:12px;gap:6px}
+.pitems{flex:1;overflow-y:auto}
+.bitem{padding:9px 0;border-bottom:1px solid #f2f4f7;display:flex;align-items:flex-start;gap:6px}
+.bi-name{font-size:12px;font-weight:600;color:#1a1a1a}
+.bi-sub{font-size:11px;color:#999;margin-top:1px}
+.bi-price{font-size:12px;font-weight:700;color:#0d1b2a;white-space:nowrap}
+.bi-rm{background:none;border:none;color:#ccc;cursor:pointer;font-size:17px;padding:0;line-height:1}
+.bi-rm:hover{color:#e24b4a}
+.ptotals{border-top:2px solid #eaecf0;padding-top:12px;margin-top:4px}
+.trow{display:flex;justify-content:space-between;font-size:12px;color:#777;margin-bottom:5px}
+.trow.big{font-size:15px;font-weight:700;color:#1a1a1a;margin-top:6px;padding-top:6px;border-top:1px solid #eaecf0}
+.bstat{border-radius:7px;padding:9px 12px;font-size:12px;font-weight:500;margin:10px 0;text-align:center}
+.bs-ok{background:#e6f9f2;color:#0f6e56}
+.bs-over{background:#fde8e8;color:#a32d2d}
+.bs-neutral{background:#f3f4f6;color:#777}
+.sbtn{width:100%;padding:12px;background:#1d9e75;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}
+.sbtn:hover{background:#0f6e56}
+.sbtn:disabled{background:#b5d4c8;cursor:not-allowed}
+
+/* SUCCESS */
+.soverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;align-items:center;justify-content:center}
+.soverlay.show{display:flex}
+.sbox{background:#fff;border-radius:12px;padding:28px;max-width:400px;width:90%;text-align:center}
+.sbox h2{font-size:18px;font-weight:600;color:#0d1b2a;margin-bottom:6px}
+.sbox p{font-size:13px;color:#666;line-height:1.6;margin-bottom:14px}
+.sref{font-size:17px;font-weight:700;color:#1d9e75;letter-spacing:1px;margin-bottom:14px}
+.scls{background:#0d1b2a;color:#fff;border:none;border-radius:7px;padding:10px 24px;font-size:13px;font-weight:600;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div id="site-header">
+  <span class="logo">SECRET SALES</span>
+  <span style="display:block;color:#fff;font-size:17px;font-weight:600;margin-bottom:9px">UK Marketing &amp; Advertising Products</span>
+  <span class="badge">Brand Partnership Rate Card · 2026</span>
+</div>
+
+<div id="page-body">
+<div id="centre">
+<div id="centre-inner">
+
+<div class="block">
+  <div class="block-title">Partner details</div>
+  <div class="frow">
+    <div class="fg"><label>Partner / brand name</label><input type="text" id="partnerName" placeholder="Brand name"></div>
+    <div class="fg"><label>Contact name</label><input type="text" id="contactName" placeholder="Your name"></div>
+  </div>
+  <div class="frow">
+    <div class="fg"><label>Email address</label><input type="email" id="partnerEmail" placeholder="you@brand.com"></div>
+    <div class="fg"><label>Market</label>
+      <select id="mktSelect" onchange="onMktChange()">
+        <option value="uk">Secret Sales UK</option>
+        <option value="vd">V&amp;D</option>
+        <option value="tbd">To Be Dressed</option>
+        <option value="dfl">Dress For Less</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="budget-block">
+  <label>Total campaign budget</label>
+  <div class="bnum"><sup id="sym">£</sup><span id="budgetNum">5,000</span></div>
+  <input type="range" id="budgetSlider" min="1000" max="50000" step="500" value="5000" oninput="onSlide()">
+  <div class="blimits"><span id="minLbl">£1,000</span><span id="maxLbl">£50,000</span></div>
+  <div class="fxnote" id="fxNote"></div>
+</div>
+
+<div class="roas-block">
+  <label>Return on ad spend (ROAS) goal</label>
+  <div class="roas-note">Your target return on investment — for every £1 spent, how much revenue do you want to generate?</div>
+  <select id="roasGoal">
+    <option value="">Select a ROAS target</option>
+    <option value="2-3x">2x – 3x return</option>
+    <option value="4-5x">4x – 5x return</option>
+    <option value="6-7x">6x – 7x return</option>
+  </select>
+</div>
+
+<div class="psec">
+  <div class="sec-title">Homepage ads</div>
+  <div class="sec-desc">High-impact brand placements on the Secret Sales homepage. Boosts visibility by up to 10x.</div>
+
+  <div class="pcard" id="card-bannerstrip">
+    <div class="ptop" onclick="toggle('bannerstrip')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Banner strip</div>
+        <div class="pdesc">High-performing homepage placement with tailored messaging and gifting options.</div>
+        <div class="pmeta"><span class="pprice" id="pr-bannerstrip">£5,500</span><span class="pimps">150k–300k weekly impressions</span></div>
+      </div>
+      <svg class="pthumb" viewBox="0 0 80 52"><rect width="80" height="52" fill="#f7f8fa"/><rect x="5" y="5" width="70" height="5" rx="1" fill="#e5e9ef"/><rect x="5" y="12" width="70" height="5" rx="1" fill="#e5e9ef"/><rect x="5" y="21" width="70" height="11" rx="2" fill="#ba7517"/><text x="40" y="29" fill="white" font-size="5" font-family="Arial" font-weight="bold" text-anchor="middle">BANNER STRIP</text><rect x="5" y="36" width="70" height="5" rx="1" fill="#e5e9ef"/></svg>
+    </div>
+    <div class="pdates" id="dates-bannerstrip">
+      <div class="drow">
+        <div class="dg"><label>Select week</label><select id="week-bannerstrip" onchange="weekSel('bannerstrip',4)"></select></div>
+        <div class="dg"><label>Which week (of 4)</label><select id="wk-bannerstrip" onchange="weekSel('bannerstrip',4)"><option>Week 1</option><option>Week 2</option><option>Week 3</option><option>Week 4</option></select></div>
+      </div>
+      <div class="dhint" id="hint-bannerstrip">4 separate weeks available per year</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-brandblock">
+    <div class="ptop" onclick="toggle('brandblock')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Trending brand block</div>
+        <div class="pdesc">Showcase top deals or latest collections in a high-visibility content block. One of our best-selling placements.</div>
+        <div class="pmeta"><span class="pprice" id="pr-brandblock">£5,500</span><span class="pimps">150k–300k weekly impressions</span></div>
+      </div>
+      <svg class="pthumb" viewBox="0 0 80 52"><rect width="80" height="52" fill="#f7f8fa"/><rect x="5" y="5" width="70" height="5" rx="1" fill="#e5e9ef"/><rect x="5" y="13" width="70" height="28" rx="2" fill="#0d1b2a"/><text x="40" y="24" fill="white" font-size="5" font-family="Arial" font-weight="bold" text-anchor="middle">TRENDING BRAND</text><rect x="10" y="27" width="14" height="9" rx="1" fill="#1d9e75" opacity=".7"/><rect x="28" y="27" width="14" height="9" rx="1" fill="#1d9e75" opacity=".5"/><rect x="46" y="27" width="14" height="9" rx="1" fill="#1d9e75" opacity=".3"/></svg>
+    </div>
+    <div class="pdates" id="dates-brandblock">
+      <div class="drow">
+        <div class="dg"><label>Select week</label><select id="week-brandblock" onchange="weekSel('brandblock',4)"></select></div>
+        <div class="dg"><label>Which week (of 4)</label><select id="wk-brandblock" onchange="weekSel('brandblock',4)"><option>Week 1</option><option>Week 2</option><option>Week 3</option><option>Week 4</option></select></div>
+      </div>
+      <div class="dhint" id="hint-brandblock">4 separate weeks available per year</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-brandrail">
+    <div class="ptop" onclick="toggle('brandrail')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Brand rail</div>
+        <div class="pdesc">Feature your offer or new product line on the homepage with a strong call-to-action bubble.</div>
+        <div class="pmeta"><span class="pprice" id="pr-brandrail">£5,500</span><span class="pimps">600k–850k weekly impressions</span></div>
+      </div>
+      <svg class="pthumb" viewBox="0 0 80 52"><rect width="80" height="52" fill="#f7f8fa"/><rect x="5" y="5" width="70" height="12" rx="2" fill="#0d1b2a"/><text x="40" y="13" fill="white" font-size="4" font-family="Arial" font-weight="bold" text-anchor="middle">WE THINK YOU'LL LOVE</text><rect x="5" y="21" width="15" height="18" rx="2" fill="#e5e9ef"/><rect x="23" y="21" width="15" height="18" rx="2" fill="#e5e9ef"/><rect x="41" y="21" width="15" height="18" rx="2" fill="#e5e9ef"/><rect x="59" y="21" width="15" height="18" rx="2" fill="#1d9e75" opacity=".5"/></svg>
+    </div>
+    <div class="pdates" id="dates-brandrail">
+      <div class="drow">
+        <div class="dg"><label>Select week</label><select id="week-brandrail" onchange="weekSel('brandrail',3)"></select></div>
+        <div class="dg"><label>Which week (of 3)</label><select id="wk-brandrail" onchange="weekSel('brandrail',3)"><option>Week 1</option><option>Week 2</option><option>Week 3</option></select></div>
+      </div>
+      <div class="dhint" id="hint-brandrail">3 separate weeks available per year</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-hero">
+    <div class="ptop" onclick="toggle('hero')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Homepage hero</div>
+        <div class="pdesc">Top of homepage — highest converting placement. 2 days only. Ideal for maximum impact launches.</div>
+        <div class="pmeta"><span class="pprice" id="pr-hero">£7,500</span><span class="pimps">600k–850k weekly impressions</span></div>
+      </div>
+      <svg class="pthumb" viewBox="0 0 80 52"><rect width="80" height="52" fill="#0d1b2a"/><rect x="5" y="7" width="70" height="23" rx="2" fill="#1d9e75" opacity=".9"/><text x="40" y="21" fill="white" font-size="6" font-family="Arial" font-weight="bold" text-anchor="middle">HOMEPAGE HERO</text><rect x="5" y="34" width="33" height="6" rx="1" fill="#1a3550"/><rect x="42" y="34" width="33" height="6" rx="1" fill="#1a3550"/></svg>
+    </div>
+    <div class="pdates" id="dates-hero">
+      <div class="drow" style="grid-template-columns:1fr">
+        <div class="dg"><label>Start date (2-day placement)</label><input type="date" id="start-hero" onchange="heroDate()"></div>
+      </div>
+      <div class="dhint" id="hint-hero">End date calculated automatically</div>
+      <div class="dwarn" id="warn-hero"></div>
+    </div>
+  </div>
+</div>
+
+<div class="psec">
+  <div class="sec-title">Sponsored ads</div>
+  <div class="sec-desc">Drive visibility across category, search and competitor product pages with real-time reporting.</div>
+
+  <div class="pcard" id="card-sp-t3">
+    <div class="ptop" onclick="toggle('sp-t3')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Bronze campaign</div>
+        <div class="pdesc">Category pages only. Set up included.</div>
+        <div class="pmeta"><span class="pprice" id="pr-sp-t3">£1,000 / month</span><span class="pimps">250k+ weekly reach</span></div>
+      </div>
+    </div>
+    <div class="pdates" id="dates-sp-t3">
+      <div class="drow">
+        <div class="dg"><label>Start month</label><select id="start-sp-t3" onchange="spMonths('sp-t3',1000)"></select></div>
+        <div class="dg"><label>End month</label><select id="end-sp-t3" onchange="spMonths('sp-t3',1000)"></select></div>
+      </div>
+      <div class="dhint" id="hint-sp-t3">Select start and end month</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-sp-t2">
+    <div class="ptop" onclick="toggle('sp-t2')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Silver campaign</div>
+        <div class="pdesc">Category pages and Search. Set up and managed.</div>
+        <div class="pmeta"><span class="pprice" id="pr-sp-t2">£2,000 / month</span><span class="pimps">500k+ weekly reach</span></div>
+      </div>
+    </div>
+    <div class="pdates" id="dates-sp-t2">
+      <div class="drow">
+        <div class="dg"><label>Start month</label><select id="start-sp-t2" onchange="spMonths('sp-t2',2000)"></select></div>
+        <div class="dg"><label>End month</label><select id="end-sp-t2" onchange="spMonths('sp-t2',2000)"></select></div>
+      </div>
+      <div class="dhint" id="hint-sp-t2">Select start and end month</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-sp-t1">
+    <div class="ptop" onclick="toggle('sp-t1')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Gold campaign</div>
+        <div class="pdesc">Category, Search and Competitor pages. Set up and managed. Maximum reach.</div>
+        <div class="pmeta"><span class="pprice" id="pr-sp-t1">£3,000 / month</span><span class="pimps">1M+ weekly reach</span></div>
+      </div>
+    </div>
+    <div class="pdates" id="dates-sp-t1">
+      <div class="drow">
+        <div class="dg"><label>Start month</label><select id="start-sp-t1" onchange="spMonths('sp-t1',3000)"></select></div>
+        <div class="dg"><label>End month</label><select id="end-sp-t1" onchange="spMonths('sp-t1',3000)"></select></div>
+      </div>
+      <div class="dhint" id="hint-sp-t1">Select start and end month</div>
+    </div>
+  </div>
+</div>
+
+<div class="psec">
+  <div class="sec-title">Email ads</div>
+  <div class="sec-desc">Reach up to 1M engaged shoppers. Perfect for launches, flash sales and seasonal campaigns.</div>
+
+  <div class="pcard" id="card-emailsolus">
+    <div class="ptop" onclick="toggle('emailsolus')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">Solus email</div>
+        <div class="pdesc">A full email dedicated entirely to your brand. 100% inbox focus. 2 sends per year, 750k–1M customers per send.</div>
+        <div class="pmeta"><span class="pprice" id="pr-emailsolus">£5,500</span><span class="pimps">750k–1M reach per send</span></div>
+      </div>
+    </div>
+    <div class="pdates" id="dates-emailsolus">
+      <div class="drow">
+        <div class="dg"><label>Preferred send date</label><input type="date" id="start-emailsolus"></div>
+        <div class="dg"><label>Which send (of 2)</label><select><option>Send 1</option><option>Send 2</option></select></div>
+      </div>
+      <div class="dhint">2 sends included per year</div>
+    </div>
+  </div>
+
+  <div class="pcard" id="card-emailbau">
+    <div class="ptop" onclick="toggle('emailbau')">
+      <div class="pcheck"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="pbody">
+        <div class="ptitle">BAU email banners</div>
+        <div class="pdesc">Full-width banner in our regular broadcast emails. Avg CVR 2–4%.</div>
+        <div class="pmeta"><span class="pprice" id="pr-emailbau">£6,000</span><span class="pimps">Up to 1M reach</span></div>
+      </div>
+    </div>
+    <div class="pdates" id="dates-emailbau">
+      <div class="drow">
+        <div class="dg"><label>Select week</label><select id="week-emailbau" onchange="weekSel('emailbau',4)"></select></div>
+        <div class="dg"><label>Which week (of 4)</label><select id="wk-emailbau" onchange="weekSel('emailbau',4)"><option>Week 1</option><option>Week 2</option><option>Week 3</option><option>Week 4</option></select></div>
+      </div>
+      <div class="dhint" id="hint-emailbau">4 separate weeks available per year</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div id="panel">
+  <div class="panel-title">Selected products <span class="cbadge" id="currBadge">GBP £</span></div>
+  <div id="pempty" class="pempty">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#e5e9ef" stroke-width="1.5"/><path d="M8 14h12M14 8v12" stroke="#ddd" stroke-width="1.5" stroke-linecap="round"/></svg>
+    Select products to build your plan
+  </div>
+  <div id="pitems" class="pitems" style="display:none"></div>
+  <div id="ptotals" class="ptotals" style="display:none">
+    <div class="trow"><span>Subtotal</span><span id="subtot">—</span></div>
+    <div class="trow big"><span>Total</span><span id="grandtot">—</span></div>
+    <div id="bstat" class="bstat bs-neutral">Add products to see budget status</div>
+    <button class="sbtn" id="subBtn" onclick="doSubmit()" disabled>Submit proposal</button>
+  </div>
+</div>
+</div>
+
+<div class="soverlay" id="soverlay">
+  <div class="sbox">
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" style="margin:0 auto 14px;display:block"><circle cx="22" cy="22" r="22" fill="#e6f9f2"/><path d="M12 22L18.5 29L32 14" stroke="#1d9e75" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2>Proposal submitted</h2>
+    <p>Your selection has been sent to the Secret Sales retail media team. We'll be in touch within 2 business days.</p>
+    <div class="sref" id="refNo">SS-2026-0000</div>
+    <p style="font-size:12px;color:#aaa;margin-bottom:18px">Confirmation sent to <span id="confEmail" style="color:#666"></span></p>
+    <button class="scls" onclick="document.getElementById('soverlay').classList.remove('show')">Done</button>
+  </div>
+</div>
+
+<script>
+const EKOW='ekow.mensah@secretsales.com';
+const BASE={hero:7500,brandrail:5500,brandblock:5500,bannerstrip:5500,'sp-t3':1000,'sp-t2':2000,'sp-t1':3000,emailbau:6000,emailsolus:5500};
+const NAMES={hero:'Homepage hero',brandrail:'Brand rail',brandblock:'Trending brand block',bannerstrip:'Banner strip','sp-t3':'Sponsored ads — Bronze campaign','sp-t2':'Sponsored ads — Silver campaign','sp-t1':'Sponsored ads — Gold campaign',emailbau:'BAU email banners',emailsolus:'Solus email'};
+let sel={},fxRate=1.17,curr='GBP',sym='£';
+
+async function fetchFX(){
+  try{const r=await fetch('https://api.exchangerate-api.com/v4/latest/GBP');const d=await r.json();fxRate=d.rates['EUR']||1.17;}catch(e){}
+  onMktChange();
+}
+function cv(g){return curr==='GBP'?g:Math.round(g*fxRate);}
+function fmt(n){return sym+n.toLocaleString();}
+function onMktChange(){
+  const m=document.getElementById('mktSelect').value;
+  const mn={uk:'Secret Sales UK',vd:'V&D',tbd:'To Be Dressed',dfl:'Dress For Less'};
+  if(m==='uk'){curr='GBP';sym='£';document.getElementById('fxNote').style.display='none';document.getElementById('currBadge').textContent='GBP £';}
+  else{curr='EUR';sym='€';document.getElementById('fxNote').style.display='block';document.getElementById('fxNote').textContent=`Prices in EUR for ${mn[m]} · 1 GBP = ${fxRate.toFixed(4)} EUR (live)`;document.getElementById('currBadge').textContent='EUR €';}
+  document.getElementById('sym').textContent=sym;
+  document.getElementById('minLbl').textContent=sym+'1,000';
+  document.getElementById('maxLbl').textContent=sym+'50,000';
+  Object.keys(BASE).forEach(id=>{const el=document.getElementById('pr-'+id);if(el)el.textContent=fmt(cv(BASE[id]))+(['sp-t3','sp-t2','sp-t1'].includes(id)?' / month':'');});
+  onSlide();renderBasket();
+}
+function onSlide(){
+  const raw=parseInt(document.getElementById('budgetSlider').value);
+  document.getElementById('budgetNum').textContent=cv(raw).toLocaleString();
+  updateStat();
+}
+function getBudget(){return parseInt(document.getElementById('budgetSlider').value);}
+function populateWeeks(){
+  const now=new Date();
+  let opts='<option value="">Select a week</option>';
+  for(let i=0;i<52;i++){const d=new Date(now.getFullYear(),now.getMonth(),now.getDate()+(i*7));opts+=`<option value="${d.toISOString().slice(0,10)}">w/c ${d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</option>`;}
+  ['bannerstrip','brandblock','brandrail','emailbau'].forEach(id=>{const el=document.getElementById('week-'+id);if(el)el.innerHTML=opts;});
+}
+function populateMonths(){
+  const now=new Date();
+  let opts='';
+  for(let i=0;i<24;i++){const d=new Date(now.getFullYear(),now.getMonth()+i,1);opts+=`<option value="${d.toISOString().slice(0,7)}">${d.toLocaleDateString('en-GB',{month:'long',year:'numeric'})}</option>`;}
+  ['sp-t3','sp-t2','sp-t1'].forEach(id=>{document.getElementById('start-'+id).innerHTML=opts;document.getElementById('end-'+id).innerHTML=opts;});
+}
+function weekSel(id,total){
+  const w=document.getElementById('week-'+id).value;
+  const wk=document.getElementById('wk-'+id).value;
+  const h=document.getElementById('hint-'+id);
+  if(w&&h)h.textContent=`${wk} of ${total} selected: w/c ${new Date(w).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}`;
+  if(sel[id]){sel[id].startDate=w;sel[id].note=`${wk} of ${total}`;renderBasket();}
+}
+function heroDate(){
+  const s=document.getElementById('start-hero').value;
+  if(!s)return;
+  const d=new Date(s);d.setDate(d.getDate()+1);
+  document.getElementById('hint-hero').textContent=`2-day placement: ${s} – ${d.toISOString().slice(0,10)}`;
+  if(sel['hero']){sel['hero'].startDate=s;sel['hero'].endDate=d.toISOString().slice(0,10);renderBasket();}
+}
+function spMonths(id,ppm){
+  const sm=document.getElementById('start-'+id).value;
+  const em=document.getElementById('end-'+id).value;
+  if(!sm||!em)return;
+  const months=Math.max(1,(new Date(em+'-01')-new Date(sm+'-01'))/(1000*60*60*24*30.44)+1|0);
+  const total=ppm*months;
+  document.getElementById('hint-'+id).textContent=`${months} month${months>1?'s':''} · ${fmt(cv(total))} total`;
+  if(sel[id]){sel[id].price=total;sel[id].startDate=sm;sel[id].endDate=em;renderBasket();}
+}
+function toggle(id){
+  const card=document.getElementById('card-'+id);
+  if(sel[id]){delete sel[id];card.classList.remove('sel');}
+  else{sel[id]={id,name:NAMES[id],price:BASE[id],startDate:'',endDate:''};card.classList.add('sel');}
+  renderBasket();
+}
+function renderBasket(){
+  const items=Object.values(sel);
+  document.getElementById('pempty').style.display=items.length?'none':'flex';
+  document.getElementById('pitems').style.display=items.length?'block':'none';
+  document.getElementById('ptotals').style.display=items.length?'block':'none';
+  if(!items.length)return;
+  let html='',total=0;
+  items.forEach(i=>{
+    total+=i.price;
+    const sp=['sp-t3','sp-t2','sp-t1'].includes(i.id);
+    const sub=i.note||(sp&&i.startDate?`${i.startDate} – ${i.endDate||'?'}`:i.startDate)||'';
+    html+=`<div class="bitem"><div style="flex:1"><div class="bi-name">${i.name}</div>${sub?`<div class="bi-sub">${sub}</div>`:''}</div><span class="bi-price">${fmt(cv(i.price))}</span><button class="bi-rm" onclick="remove('${i.id}')">×</button></div>`;
+  });
+  document.getElementById('pitems').innerHTML=html;
+  document.getElementById('subtot').textContent=fmt(cv(total));
+  document.getElementById('grandtot').textContent=fmt(cv(total));
+  updateStat(total);
+}
+function remove(id){delete sel[id];document.getElementById('card-'+id).classList.remove('sel');renderBasket();}
+function updateStat(totalGBP){
+  const items=Object.values(sel);
+  if(totalGBP===undefined)totalGBP=items.reduce((s,i)=>s+i.price,0);
+  const bs=document.getElementById('bstat'),sb=document.getElementById('subBtn');
+  if(!items.length){bs.className='bstat bs-neutral';bs.textContent='Add products to see budget status';if(sb)sb.disabled=true;return;}
+  const diff=getBudget()-totalGBP;
+  if(diff>=0){bs.className='bstat bs-ok';bs.textContent=diff===0?`Exactly matches your ${fmt(cv(getBudget()))} budget`:`${fmt(cv(diff))} remaining within your ${fmt(cv(getBudget()))} budget`;}
+  else{bs.className='bstat bs-over';bs.textContent=`${fmt(cv(Math.abs(diff)))} over your ${fmt(cv(getBudget()))} budget`;}
+  if(sb)sb.disabled=false;
+}
+function doSubmit(){
+  const partner=document.getElementById('partnerName').value.trim();
+  const email=document.getElementById('partnerEmail').value.trim();
+  const contact=document.getElementById('contactName').value.trim();
+  const roas=document.getElementById('roasGoal').value;
+  const mkt=document.getElementById('mktSelect').options[document.getElementById('mktSelect').selectedIndex].text;
+  if(!partner){alert('Please enter a partner name.');return;}
+  if(!email){alert('Please enter an email address.');return;}
+  const items=Object.values(sel);
+  if(!items.length){alert('Please select at least one product.');return;}
+  const total=items.reduce((s,i)=>s+i.price,0);
+  const ref='SS-'+new Date().getFullYear()+'-'+String(Math.floor(Math.random()*9000)+1000);
+  const lines=items.map(i=>`• ${i.name}: ${fmt(cv(i.price))}${i.startDate?' ('+i.startDate+(i.endDate?' – '+i.endDate:'')+')':''}`).join('\n');
+  const body=`New retail media proposal\n\nRef: ${ref}\n\nPARTNER\nBrand: ${partner}\nContact: ${contact}\nEmail: ${email}\nMarket: ${mkt}\nROAS goal: ${roas||'Not specified'}\n\nSELECTION\n${lines}\n\nTotal: ${fmt(cv(total))}\nBudget: ${fmt(cv(getBudget()))}\n\nSubmitted: ${new Date().toLocaleString('en-GB')}`;
+  window.location.href=`mailto:${EKOW}?cc=${encodeURIComponent(email)}&subject=${encodeURIComponent('Retail media proposal — '+partner+' ['+ref+']')}&body=${encodeURIComponent(body)}`;
+  document.getElementById('refNo').textContent=ref;
+  document.getElementById('confEmail').textContent=email;
+  document.getElementById('soverlay').classList.add('show');
+}
+populateWeeks();populateMonths();fetchFX();
+</script>
+</body>
+</html>
